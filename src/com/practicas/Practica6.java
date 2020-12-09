@@ -50,7 +50,11 @@ public class Practica6 {
 		} else if (diaSetmana == 6) {
 			
 			System.out.println("És Disabte");
-		}
+		} else
+			
+			System.out.println("No existeix aquest dia");
+		
+		//terminar con else "cualquier otro caso"
 		
 		// EXERCICI 2 Realitzeu el mateix exercici de l’apartat anterior però amb la
 		// estructura switch/case.
@@ -81,7 +85,9 @@ public class Practica6 {
 			case 7:
 				System.out.println("És Diumenge");
 				break;
-		}
+			default:
+				System.out.println("No existeix aquest dia");
+		} //ultimo case poner default segun profe pero no es obligatorio
 		
 		/*
 		 * EXERCICI 3 Genereu una aplicació d’un banc amb les estructures if/else
@@ -161,9 +167,10 @@ public class Practica6 {
 		
 		int insertar = entrada.nextInt();
 		
-		switch (insertar) {
+		switch (insertar) { //valor
 			
-			case 1: 
+			
+			case 1: //en caso de introducir 1
 				
 				System.out.println("Introdueix la quantitat a ingressar");
 			
@@ -212,6 +219,10 @@ public class Practica6 {
 						
 				}
 				RESPOSTA: No es poden posar condicions "booleanas" en un switch case.
+				
+				RESPOSTA PROFE: Al switch/case si que pots posar condicions booleanes (totes les condicions acaben sent booleanes), però només 
+				d'igualtat a enters o Strings (en les noves versions de Java). Per exemple, avaluar si una variable és 1, 2, "x" i similar, no per 
+				avaluar si "és més gran que".
 				*/
 				
 				default: 

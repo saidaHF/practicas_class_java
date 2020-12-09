@@ -36,7 +36,7 @@ public class Practica8 {
 		 * Realitzeu el mateix exemple de l’exercici anterior però amb el bucle for each en comptes del bucle for. 
 		 * És més intuïtiu o més difícil d’utilitzar? Justifiqueu la resposta.
 		 * 
-		 * 	RESPOSTA: És més intuïtiu ja que es veu el tipus de variable pero al "for" no es veu.
+		 * 	RESPOSTA: És més intuïtiu ja que no ens hem de preocupar de prendre les posicions del vector manualment, ja ho fa el propi foreach
 		 */
 		
 		for (String marca : marcas) {
@@ -50,7 +50,10 @@ public class Practica8 {
 		 * 			i. «Crec que l’alumne/a <nom de l’alumne obtingut del vector de noms> tindrà un <nota de l’alumne obtinguda del vector de notes> de nota de la UF
 		 * 		c. Podríem fer aquest exemple amb el bucle for each? Justifiqueu la resposta.
 		 * 
-		 * RESPOSTA: Si es pot fer, pero és més llarg i complex.
+		 * RESPOSTA: Si es pot fer, pero és més complex. 
+		 * 
+		 * RESPOSTA PROFE: No podem generar un bucle foreach perque no disposarem de les posicions de les iteracions, pel que no podrem creuar la 
+		 * informació dels dos vectors. (SOLO FOR EACH sin contadores ni nada)
 		 */
 		
 		String alumClasse[][] = {
@@ -74,7 +77,7 @@ public class Practica8 {
 			// Amb el alumClasse.lenght agafem la longitud del vector, com els dos vectors tenen la mateixa longitud 
 			//podem fer-ho servir amb les dues arrays alumClasse i alumNota, amb la poisció [i][j], exemple: [0][0] = Raul 8
 			
-			for (int j = 0; j < alumClasse.length; j++) {
+			for (int j = 0; j < alumClasse[i].length; j++) { //alumClasse[i].length posició del vector
 				System.out.println("(for) Crec que l’alumne/a " + alumClasse[i][j] + " tindrà un " + alumNota[i][j] + " de nota de la UF");
 			}
 		}

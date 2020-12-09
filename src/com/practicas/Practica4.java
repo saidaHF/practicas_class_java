@@ -2,6 +2,8 @@
 
 package com.practicas;
 
+import java.util.Arrays;
+
 public class Practica4 {
 
 	public static void main(String[] args) {
@@ -92,13 +94,19 @@ public class Practica4 {
 		
 		/* d. Canvieu de lloc dos alumnes en aquest vector nou. Recordeu canviar les posicions al vector de notes 
 		per que s’adaptin a les noves posicions. */
+		System.out.println("Ara tenim en la posició 0 0 a: " + classeAlum[0][0] + " amb la nota " + notaAlum[0][0]);
+		System.out.println("també tenim en la posició 0 4 a: " + classeAlum[0][4] + " amb la nota " + notaAlum[0][4]);
 		
-		classeAlum[0][0] = "Rubens";
-		notaAlum[0][0] = 9;
-		System.out.println(classeAlum[0][0] + " " + "nota:" + " " + notaAlum[0][0]);
-		classeAlum[4][0] = "Borja";
-		notaAlum[4][0] = 5;
-		System.out.println(classeAlum[4][0] + " " + "nota:" + " " + notaAlum[4][0]);
+		String alumne_temp = classeAlum[0][0];
+		classeAlum[0][0] = classeAlum [0][4];
+		classeAlum [0][4] = alumne_temp;
+		
+		Short nota_temp = notaAlum[0][0];
+		notaAlum[0][0] = notaAlum[0][4];
+		notaAlum[0][4] = nota_temp;
+			
+		System.out.println("Després tenim en la posició 0 0 a: " + classeAlum[0][0] + " amb la nota " + notaAlum[0][0]);
+		System.out.println("també tenim en la posició 0 4 a: " + classeAlum[0][4] + " amb la nota " + notaAlum[0][4]);
 		
 		//EXERCICI 5
 		/* Genereu un vector de caràcters amb els valors {‘E’,’s’,’t’,’a’,’t’,’u’,’t’}. Busqueu com convertir aquest 

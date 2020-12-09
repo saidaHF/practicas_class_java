@@ -80,14 +80,14 @@ public class Practica7 {
 		
 		valor = 1;
 		
-		do {
+		do { //si no posem el syso avans de valor++ començaria en 2 el bucle, perque primer suma valor++ i despres fa el while
 			
 			System.out.println("Ex3 valor 1: " + valor);
 			
 			valor++;
 			
 		} while (valor <= 10);
-		
+		/////////////////////////////////////////////////////////////
 		valor = 6;
 		
 		do {
@@ -137,13 +137,14 @@ public class Practica7 {
 			
 			System.out.println("Introduïr nota:");	//para mostar por pantalla
 			
-			byte nota = entrada.nextByte();  //permite escribir en la consola
+			byte nota = entrada.nextByte();  //permite escribir en la consola y guarda el valor introducido
 			
 			aprovat = (nota >= 5);  // com aprovat es una variable booleana si nota >= 5 retorna true (es compleix la condició) si no, canvia a false.
 			
 			String resposta = aprovat ? "L’alumne ha aprovat" : "L’alumne ha suspès";  // if ternario, sí es true es aprovat i si es false es suspés
+			//     resposta és true?          si                          no
 			
-			System.out.println(resposta + " amb un " + nota);
+			System.out.println(resposta + " amb un " + nota); //resposta retorna el valor del if ternario i nota el valor introduït per l'usuari.
 		
 		}
 		

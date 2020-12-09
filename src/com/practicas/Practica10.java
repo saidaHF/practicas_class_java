@@ -18,7 +18,7 @@ public class Practica10 {
 		
 		if (num > 10) {
 			System.out.println(num + " és més gran que 10");
-		} else if (num <= 10) {
+		} else if (num <= 10) { // se puede hacer solo un else, else es mayor
 			System.out.println(num + " és més petit o igual que 10");
 		}
 		
@@ -91,6 +91,10 @@ public class Practica10 {
 			invertit = invertit + nombre.charAt(i); 		// - - - agafa cada caracter del String per poder-lo posar invertit un a un.
 		}
 		
+		/*
+		 hay que usar numero % 10  i numero / 10
+		 */
+		
 		System.out.println(invertit);  
 		
 		/* 6. Escriure un algoritme que calculi tants nombres primers com indiqui l’usuari. Cal tenir en compte les següents especificacions:
@@ -104,6 +108,8 @@ public class Practica10 {
 		 
 		 int intro = entrada.nextInt();
 		 int encontrados = 0;
+		 
+		 //if este numero no es 0, hacemos este for (porque si introduces 0 es ninguno...)
 		 
 		 for (int i = 2; encontrados < intro; i++) {   // encontrados comença en 0 i va augmentant cada vegada que trovem un primer.
 			 boolean esPrimo = true;				   // suposem que tots els numeros son primers = true

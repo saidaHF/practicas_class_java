@@ -13,7 +13,7 @@ public class Practica2 {
 		System.out.println(restante);
 		
 		char letra = 'r';
-		System.out.println(letra);
+		System.out.println("char letra r: " + letra);
 		
 		long telf = 2111111111;
 		System.out.println(telf);
@@ -57,10 +57,10 @@ public class Practica2 {
 		//EXERCICI 4
 		
 		byte letraR = (byte)letra;
-		System.out.println(letraR);
+		System.out.println("valor letraR como byte: " + letraR);
 		
 		int letra1 = letra;
-		System.out.println(letra1);
+		System.out.println("valor int letra " + letra1);
 		
 		long restanteLong = restante;
 		System.out.println(restanteLong);
