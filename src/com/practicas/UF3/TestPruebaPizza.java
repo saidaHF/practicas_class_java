@@ -46,6 +46,7 @@ public class TestPruebaPizza {
 			int suma = 0;
 			int valor;
 			int i = 0; //comptador
+			
 			while(lector.hasNext()) {
 				suma += lector.nextInt();
 				i += 1; //i++;

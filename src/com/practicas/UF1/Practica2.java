@@ -85,6 +85,10 @@ public class Practica2 {
 		System.out.println(vint);		
 		//devuelve el valor de P que es 80.
 		
+		letra = '0';
+		int letrita = (int)letra;
+		System.out.println("test:" + letrita);
+		
 	}
 
 }
