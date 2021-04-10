@@ -32,7 +32,12 @@ public class Transport {
 	
 	float Velocitat() {
 		Scanner entrada = new Scanner(System.in);
-		float velocitat = distancia(entrada) / temps(entrada);	
+		float d = distancia(entrada);
+		float t = temps(entrada);
+		if (t == 0) {
+			return 0;
+		}
+		float velocitat = d / t;	
 		return velocitat;
 	}
 	
@@ -57,10 +62,10 @@ public class Transport {
 		float vo = Vo(entrada);
 		float t = temps(entrada);
 		
-		if (vf - vo == 0) { // no es pot dividir 0 entre 0 és NaN, retornem 0 així el metode de "Estat" pot saber si té aceleracció o no
+		if (t == 0) { // no es pot dividir entre 0 és NaN, retornem 0 així el metode de "Estat" pot saber si té aceleracció o no té
 			return 0;
 		} else {
-			float resultat = vf - vo / t; 
+			float resultat = (vf - vo) / t; 
 			return resultat; 
 		}
 	}

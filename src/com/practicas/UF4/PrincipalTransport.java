@@ -6,7 +6,6 @@ public class PrincipalTransport {
 	
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
-		// TODO Auto-generated method stub
 		
 		Transport moto = new Transport();
 		Transport moto2 = new Transport("moto", 2);
@@ -14,9 +13,15 @@ public class PrincipalTransport {
 		
 		// calculem la velocitat
 		System.out.println("Velocitat és " + moto2.Velocitat() + " m/s");
-		// calculem l'aceleracció i guardem en una variable per poderla utilitzar després amb una altre funció
+		
+		System.out.println(); // syso vacío para dar espaicio
+		
+		// calculem l'aceleracció i guardem en una variable per poderla utilitzar després amb funció: Estat()
 		float a = moto2.Acceleracio();
 		System.out.println("L'aceleracció és: " + a + " m/s^2");
+		
+		System.out.println(); // espacio vacío
+		
 		// funció per saber si el transport esta corrent o s'atura, al posar la variable creada anteriorment ho fa automaticament:
 		moto2.Estat(a);	
 	}	
