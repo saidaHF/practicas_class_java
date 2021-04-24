@@ -1,5 +1,7 @@
 package com.practicas.UF3;
 
+import java.util.Arrays;
+
 public class Paquet {
 	
 	/*
@@ -15,13 +17,25 @@ public class Paquet {
 	 */
 	
 	// PROPERTIES:
-	
-	String nomDestinatari;
 	int idTaquilla;
+	String nomDestinatari;
 	float pes;
 	int dim[]; // alçada - amplada - profunditat
+	int volum;
 	
 	// CONSTRUCTORS:
+	// Constructor per poder agafar l'String de l'arxiu
+	// Taquilla;Destinatari;pes;alcada;amplada;profunditat
+	Paquet(String idTaquilla, String nomDestinatari, String pes, String alcada, String amplada, String profunditat) {
+		this.nomDestinatari = nomDestinatari;
+		this.idTaquilla = Integer.valueOf(idTaquilla);
+		this.pes = Float.valueOf(pes.replaceAll(",", ".")); // canviem la , per un . perquè pogui agafar el float
+		this.dim = new int[3];
+		this.dim[0] = Integer.valueOf(alcada);
+		this.dim[1] = Integer.valueOf(amplada);
+		this.dim[2] = Integer.valueOf(profunditat);
+		this.volum = Utils.calcularVolum(this.dim);
+	}
 		
 	// Constructor de totes les propietats anteriors
 	Paquet(String nomDestinatari, int idTaquilla, float pes, int dim[]) {
@@ -29,16 +43,10 @@ public class Paquet {
 		this.idTaquilla = idTaquilla;
 		this.pes = pes;
 		this.dim = dim;
+		this.volum = Utils.calcularVolum(this.dim);
 	}
 	
 	// GETTERS - SETTERS
-	public String getNomDestinatari() {
-		return nomDestinatari;
-	}
-
-	public void setNomDestinatari(String nomDestinatari) {
-		this.nomDestinatari = nomDestinatari;
-	}
 
 	public int getIdTaquilla() {
 		return idTaquilla;
@@ -46,6 +54,14 @@ public class Paquet {
 
 	public void setIdTaquilla(int idTaquilla) {
 		this.idTaquilla = idTaquilla;
+	}
+
+	public String getNomDestinatari() {
+		return nomDestinatari;
+	}
+
+	public void setNomDestinatari(String nomDestinatari) {
+		this.nomDestinatari = nomDestinatari;
 	}
 
 	public float getPes() {
@@ -62,6 +78,20 @@ public class Paquet {
 
 	public void setDim(int[] dim) {
 		this.dim = dim;
+	}
+
+	public int getVolum() {
+		return volum;
+	}
+
+	public void setVolum(int volum) {
+		this.volum = volum;
+	}
+	
+	@Override
+	public String toString() {
+		return "Paquet [idTaquilla=" + idTaquilla + ", nomDestinatari=" + nomDestinatari + ", pes=" + pes + ", dim="
+				+ Arrays.toString(dim) + "]";
 	}
 	
 }

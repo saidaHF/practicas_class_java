@@ -35,6 +35,7 @@ public class Compte {
 		this.quantitat = quantitat;
 	}
 	
+	// METHODS:
 	public void ingressar (double quantitat) {
 	     if (quantitat > 0) {
 	        this.quantitat += quantitat;

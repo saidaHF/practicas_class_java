@@ -31,6 +31,8 @@ public class PrincipalTaquilla {
 		// e.
 		taquilla.mostrarCalaixos();
 		
+		
+		
 	/*	Paquet paquet3 = new Paquet("Laura Rubio Morales", taquilla.getIdTaquilla(), 4f, new int[] {8, 2, 2});
 		taquilla.guardarPaquet(paquet3, 'B', 3); */
 	} 

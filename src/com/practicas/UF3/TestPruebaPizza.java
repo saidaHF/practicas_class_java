@@ -1,5 +1,4 @@
 package com.practicas.UF3;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -17,14 +16,11 @@ public class TestPruebaPizza {
 			Scanner lector = new Scanner(document, "UTF-8");
 			while (lector.hasNextLine()) {
 				System.out.print(lector.nextLine() +  '\n');
-			}
-			
-			lector.close();
-			
+			}	
+			lector.close();	
 		} catch(IOException e) {
 			System.out.println(e);
 		}
-		
 		/////////////////////////
 		
 		document = new File("document2.txt"); // si quiero ESCRIBIR un fichero si no existe lo crea

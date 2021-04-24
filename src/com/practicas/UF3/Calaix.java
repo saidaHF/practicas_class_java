@@ -1,5 +1,4 @@
 package com.practicas.UF3;
-
 import java.util.Arrays;
 
 public class Calaix {
@@ -22,14 +21,29 @@ public class Calaix {
 	int dim[]; // alçada, amplada, profunditat
 	Paquet paquet;
 	boolean calaixOcupat; // false lliure, true ocupat
+	int volum;
 	
 	// CONSTRUCTOR:
+	// Edito aquest constructor per poder-lo adaptar als fitxers amb els tipus de les variables correctes, ja que entren com Strings:
+	public Calaix(String fila, String col, String alcada, String amplada, String profunditat) {	
+		this.fila = fila.charAt(0);
+		this.col = Integer.valueOf(col); 
+		this.dim = new int[3];
+		this.dim[0] = Integer.valueOf(alcada);
+		this.dim[1] = Integer.valueOf(amplada);
+		this.dim[2] = Integer.valueOf(profunditat);
+		this.paquet = null; 
+		this.calaixOcupat = false; 
+		this.volum = Utils.calcularVolum(this.dim);
+	}
+	
 	public Calaix(char fila, int col, int[] dim) {	
 		this.fila = fila; 
 		this.col = col; 
 		this.dim = dim;
 		this.paquet = null; 
 		this.calaixOcupat = false; 
+		this.volum = Utils.calcularVolum(this.dim);
 	}
 	
 	// Constructor paquet i calaix que té tots els atributs:
@@ -42,7 +56,7 @@ public class Calaix {
 	}
 	
 	// METHODS:
-	// metode per mostrar l'estat del paquet
+	// metode per mostrar l'estat del calaix
 	public void mostraEstat() {	
 		String estat = "El calaix " + this.fila + this.col + " està ";
 		if (this.calaixOcupat) {
@@ -51,6 +65,15 @@ public class Calaix {
 			estat += "lliure";
 		}
 		System.out.println(estat);
+	}
+	
+	// A en ASCII és 65, 65-65 = 0 (així tenim la posició 0) 
+	public int getFilaTaquilla() {
+		return this.fila - 65;
+	}
+	// Restem 1 per tenir la posicció correcta
+	public int getColTaquilla() {
+		return this.col - 1;
 	}
 	
 	// GETTERS AND SETTERS:	
@@ -92,6 +115,14 @@ public class Calaix {
 
 	public void setCalaixOcupat(boolean calaixOcupat) {
 		this.calaixOcupat = calaixOcupat;
+	}
+	
+	public int getVolum() {
+		return volum;
+	}
+
+	public void setVolum(int volum) {
+		this.volum = volum;
 	}
 
 	@Override

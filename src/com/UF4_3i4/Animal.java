@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Animal implements Cloneable {
 	
 	// ATRIBUTS:
-
 	private float high;
 	private float width;
 	private float profunditat;

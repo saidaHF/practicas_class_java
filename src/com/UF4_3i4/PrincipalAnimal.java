@@ -2,6 +2,7 @@ package com.UF4_3i4;
 
 public class PrincipalAnimal {
 	
+	
 	/*
 	 	1. Fes un programa, estructurat en classes, que compleixi els següents requisits:
 	 	
@@ -19,14 +20,16 @@ public class PrincipalAnimal {
 			d. Afegiu dos propietats més i dos mètodes més que pugui tenir la classe Animal i justifiqueu el perquè.
 	 */
 	
+	
 	public static void main(String[] args) {
+		
 		
 		Animal basilisco = new Animal();
 		
 		basilisco.demanarDades();
 		
-		basilisco.mida();
-		
+		basilisco.mida(); 
+			
 		System.out.println();
 		
 		for (int i = 0; i < 4; i++) {
@@ -61,7 +64,6 @@ public class PrincipalAnimal {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
 }

@@ -78,7 +78,8 @@ public class Persona {
 		
 		// calcular numero random del DNI:
 		
-		int dni = (int)( Math.random() * (99999999 + 1 - 10000000) + 10000000 );
+		int dni = (int)( Math.random() * (99999999 + 1 - 10000000
+				) + 10000000 );
 		
 		// calcular la letra DNI:
 		
@@ -93,7 +94,7 @@ public class Persona {
 		return DNI;
 	}
 	
-	// esMajorEdat (): indica si és major d'edat, retorna un booleà. 
+	// esMajorEdat(): indica si és major d'edat, retorna un booleà. 
 	 
 	boolean esMajorEdat () {
 			

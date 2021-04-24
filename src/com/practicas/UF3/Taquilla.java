@@ -1,5 +1,6 @@
 package com.practicas.UF3;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Taquilla {
@@ -27,7 +28,7 @@ public class Taquilla {
 	int idTaquilla;
 	String direccio;
 	String ciutat;
-	int mida[];
+	int mida[]; 
 	Calaix calaixos[][]; // files x columnes
 	
 	// CONSTRUCTORS:
@@ -39,9 +40,21 @@ public class Taquilla {
 		this.mida = mida;
 		this.calaixos = null;
 	}
+
+	// Nou constructor que accepti el codi de la taquilla, i no el generi de forma aleatòria com fins ara
+	// codi, direccio, ciutat, files, columnes
+	// Aqui canviem els tipus de cada variable:
+	public Taquilla(String idTaquilla, String direccio, String ciutat, String files, String columnes) {
+		this.idTaquilla = Integer.valueOf(idTaquilla);
+		this.direccio = direccio;
+		this.ciutat = ciutat;
+		this.mida = new int[2];
+		this.mida[0] = Integer.valueOf(files);
+		this.mida[1] = Integer.valueOf(columnes);
+		this.calaixos = new Calaix[this.mida[0]][this.mida[1]];
+	}
 	
 	// METHODS:
-	
 	// id de la taquilla amb 8 numeros:
 	private int idTaquilla() {
 		return (int) (Math.random() * (99999999 + 1 - 10000000) + 10000000);
@@ -69,6 +82,33 @@ public class Taquilla {
 			lletra++; // Sumem +1 a la lletra després de fer el segon for
 		}
 	} 
+	
+	public void guardarPaquetEficient(Paquet paquet) {	
+		ArrayList<Calaix> calaixosUtils = new ArrayList<Calaix>();
+		// Agafar tots els calaixos on hi cap el paquet comparant amb el volum i que estigui buit recorrent tots els calaixos
+		// Guardem els calaixos on hi podem guardar el paquet ( iguals o més petits que el paquet a guardar)
+		// Recorrer tots els calaixos on hi cap i agafar el més petit
+		for (int i = 0; i < this.calaixos.length; i ++) {
+			for (int j = 0; j < this.calaixos[i].length; j++) {
+				Calaix calaix = this.calaixos[i][j];
+				if (paquet.getVolum() <= calaix.getVolum() && !calaix.isCalaixOcupat()) {
+					calaixosUtils.add(this.calaixos[i][j]);
+				} 
+			}
+		}
+		if () {
+			System.out.println("No hi ha cap calaix disponible per aquest paquet");
+		}
+		// Si suposem que el primer calaix és el més petit comparem amb la resta i si trobem un més petit el guardem i comparem amb la resta, fins trovar el més petit
+		Calaix calaixMesPetit = calaixosUtils.get(0);
+		for (Calaix calaixUtil : calaixosUtils) {
+			if (calaixMesPetit.getVolum() > calaixUtil.getVolum()) {
+				calaixMesPetit = calaixUtil;
+			}
+		}
+		calaixMesPetit.setPaquet(paquet);
+		calaixMesPetit.setCalaixOcupat(true);
+	}
 
 	/*
 	 	Procediment per emmagatzemar un determinat paquet a un determinat calaix (identificat per  la seva fila i columna). 
@@ -98,6 +138,11 @@ public class Taquilla {
 		}
 	}
 	
+	// Agregar un calaix (Exemple: A1 és posició 0 0)
+	public void agregarCalaix(Calaix calaix) {
+		this.calaixos[calaix.getFilaTaquilla()][calaix.getColTaquilla()] = calaix; 
+	}
+			
 	// AUX:	
 	
 	// Per mostrar només un calaix

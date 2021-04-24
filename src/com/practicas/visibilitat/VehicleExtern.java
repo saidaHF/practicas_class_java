@@ -91,13 +91,10 @@ public class VehicleExtern {
 
 		public void setTemps(int temps) {
 			this.temps = temps;
-		}
-		
+		}	
 	}
 	
-	
-	// AUX:
-	
+	// AUX:	
 	public void mostrar(String text) {
 		System.out.println(text);
 	}
@@ -107,7 +104,6 @@ public class VehicleExtern {
 	}
 	
 	// GETTERS & SETTERS de VehicleExtern:
-
 	public String getMarca() {
 		return marca;
 	}
